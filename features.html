@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Assistants Platform — Top Features (2026)</title>
+  <meta name="description" content="Independent guide. Top AI assistant features for teams: automation, content, workflows, analysis, and productivity." />
+
+  <style>
+    :root{
+      --bg:#fbfbfd;
+      --text:#0b1220;
+      --muted:#4b5563;
+      --line:rgba(15,23,42,.12);
+
+      --c1:#5b6cff;
+      --c2:#8b5cf6;
+      --green:#22c55e;
+
+      --shadow: 0 16px 40px rgba(15,23,42,.10);
+      --radius:26px;
+      --max:1100px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background:
+        radial-gradient(900px 600px at 18% 10%, rgba(91,108,255,.10), transparent 60%),
+        radial-gradient(900px 600px at 85% 25%, rgba(139,92,246,.10), transparent 60%),
+        radial-gradient(900px 600px at 55% 0%, rgba(120,80,255,.06), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:18px 18px 90px}
+    .spacer{height:6px}
+
+    /* NAV */
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:60;
+      background:rgba(255,255,255,.82);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid rgba(15,23,42,.10);
+    }
+    .navInner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:10px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .navLeft{display:flex; align-items:center; gap:12px; min-width: 210px;}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:1000}
+    .logoMark{
+      width:34px; height:34px; border-radius:12px;
+      background:linear-gradient(135deg, var(--c1), var(--c2));
+      box-shadow:0 0 0 6px rgba(91,108,255,.10);
+      display:flex; align-items:center; justify-content:center;
+      color:#fff; font-weight:1000; font-size:14px;
+      border:1px solid rgba(255,255,255,.22);
+      flex:0 0 auto;
+    }
+
+    .navLinks{
+      display:flex; align-items:center; gap:8px;
+      flex-wrap:wrap; justify-content:center;
+    }
+    .nav a.link{
+      font-size:13px;
+      font-weight:900;
+      color:#111827;
+      padding:10px 10px;
+      border-radius:12px;
+      border:1px solid transparent;
+      transition:.15s ease;
+      line-height:1;
+      white-space:nowrap;
+    }
+    .nav a.link:hover{
+      background:rgba(91,108,255,.06);
+      border-color: rgba(91,108,255,.16);
+      transform: translateY(-1px);
+    }
+    .nav a.link.active{
+      background:linear-gradient(135deg, rgba(91,108,255,.14), rgba(139,92,246,.10));
+      border-color: rgba(91,108,255,.22);
+    }
+
+    .navRight{
+      display:flex; align-items:center; gap:10px;
+      min-width: 210px; justify-content:flex-end;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius:14px;
+      font-weight:1000;
+      border:1px solid rgba(15,23,42,.12);
+      cursor:pointer;
+      transition:.18s ease;
+      user-select:none;
+      background:#fff;
+      white-space:nowrap;
+    }
+    .btn.primary{
+      background:linear-gradient(135deg, var(--c1), var(--c2));
+      color:#fff;
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:0 18px 40px rgba(91,108,255,.18);
+    }
+    .btn.secondary{background:rgba(255,255,255,.92); color:var(--text)}
+    .btn:hover{transform:translateY(-1px); filter:brightness(1.02)}
+
+    .burger{
+      display:none;
+      width:44px; height:44px;
+      border-radius:14px;
+      border:1px solid rgba(15,23,42,.12);
+      background:rgba(255,255,255,.92);
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      transition:.18s ease;
+    }
+    .burger:hover{transform:translateY(-1px); filter:brightness(1.02)}
+    .burger svg{display:block}
+
+    .mobileMenu{
+      display:none;
+      border-top:1px solid rgba(15,23,42,.10);
+      background:rgba(255,255,255,.92);
+    }
+    .mobileMenu .mmInner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:12px 18px 16px;
+      display:grid;
+      gap:10px;
+    }
+    .mmGrid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:8px;
+    }
+    .mmGrid a{
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(15,23,42,.10);
+      background:#fff;
+      font-weight:950;
+      color:#111827;
+    }
+    .mmGrid a:hover{
+      background:rgba(91,108,255,.06);
+      border-color: rgba(91,108,255,.18);
+    }
+
+    @media(max-width:900px){
+      .navLinks{display:none}
+      .burger{display:flex}
+      .navRight{min-width:auto}
+      .navLeft{min-width:auto}
+    }
+
+    /* PAGE */
+    .panel{
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(15,23,42,.10);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px;
+      margin-top:10px;
+    }
+
+    h1{
+      font-size:36px;
+      line-height:1.08;
+      margin:0 0 10px;
+      letter-spacing:-.7px;
+    }
+    @media(max-width:520px){ h1{font-size:28px} }
+
+    .hglow{
+      background: linear-gradient(135deg, var(--c1), var(--c2));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      text-shadow: 0 18px 40px rgba(91,108,255,.12);
+    }
+
+    .sub{
+      color:var(--muted);
+      font-size:16px;
+      margin:0 0 16px;
+      max-width:80ch;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+      margin-top:12px;
+    }
+    @media(max-width:900px){ .grid{grid-template-columns:1fr} }
+
+    .card{
+      border:1px solid rgba(91,108,255,.22);
+      background:linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.78));
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 16px 40px rgba(91,108,255,.08);
+      transition:.18s ease;
+    }
+    .card:hover{transform: translateY(-2px); border-color: rgba(139,92,246,.28)}
+    .card img{width:100%; height:160px; object-fit:cover; display:block}
+    .card .body{padding:14px}
+    .card b{display:block; margin-bottom:6px; font-size:16px}
+    .card p{margin:0; color:var(--muted); font-size:14px}
+
+    .btnrow{display:flex; gap:12px; flex-wrap:wrap; margin-top:14px}
+
+    .footer{
+      margin-top:16px;
+      color:var(--muted);
+      font-size:12px;
+      opacity:.95;
+    }
+    .footer a{text-decoration:underline}
+
+    .sticky{
+      position:fixed; left:0; right:0; bottom:0;
+      background:rgba(255,255,255,.92);
+      border-top:1px solid rgba(15,23,42,.12);
+      padding:10px 12px;
+      z-index:50;
+      backdrop-filter: blur(10px);
+    }
+    .sticky .inner{
+      max-width:var(--max);
+      margin:0 auto;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .sticky .txt{font-size:13px; color:var(--muted)}
+    @media(max-width:700px){ .sticky .txt{display:none} }
+  </style>
+
+  <script type="text/javascript" src="https://inpmz.ttrk.io/track.js?rtkcmpid=699559c857a3f63c0376a292"></script>
+</head>
+
+<body>
+  <!-- HEADER + NAV -->
+  <header class="nav" aria-label="Site navigation">
+    <div class="navInner">
+      <div class="navLeft">
+        <a class="brand" href="index.html" aria-label="Home">
+          <div class="logoMark">AI</div>
+          <div>AI Assistants Guide</div>
+        </a>
+      </div>
+
+      <nav class="navLinks" aria-label="Primary">
+        <a class="link" href="index.html">Overview</a>
+        <a class="link active" href="features.html">Top Features</a>
+        <a class="link" href="comparison.html">Comparison</a>
+        <a class="link" href="faq.html">FAQ</a>
+      </nav>
+
+      <div class="navRight">
+        <a class="btn primary" id="ctaNav" href="#" rel="nofollow noopener" target="_blank">Open Platform →</a>
+        <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M4 7h16a1 1 0 1 0 0-2H4a1 1 0 1 0 0 2zm16 4H4a1 1 0 0 0 0 2h16a1 1 0 1 0 0-2zm0 6H4a1 1 0 1 0 0 2h16a1 1 0 1 0 0-2z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobileMenu" id="mobileMenu" hidden>
+      <div class="mmInner">
+        <div class="mmGrid">
+          <a href="index.html">Overview</a>
+          <a href="features.html">Top Features</a>
+          <a href="comparison.html">Comparison</a>
+          <a href="faq.html">FAQ</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+        </div>
+        <a class="btn primary" id="ctaMobile" href="#" rel="nofollow noopener" target="_blank" style="width:100%">Open Platform →</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="spacer"></div>
+
+    <div class="panel">
+      <h1><span class="hglow">Top features</span> teams use to save hours weekly</h1>
+      <p class="sub">
+        AI assistant platforms are designed to reduce repetitive work across marketing, sales, operations, and support.
+        Use this page as a checklist and confirm the latest features and plans on the provider website.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1400&q=70" alt="AI on laptop" loading="lazy">
+          <div class="body">
+            <b>Content + Copy Generation</b>
+            <p>Create emails, landing copy, product descriptions, and ad angles in minutes.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=70" alt="Analytics dashboard" loading="lazy">
+          <div class="body">
+            <b>Insights & Summaries</b>
+            <p>Turn long notes, documents, or data into clear summaries and action points.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=70" alt="Team collaboration" loading="lazy">
+          <div class="body">
+            <b>Team Workflows</b>
+            <p>Standardize work with repeatable prompts and assistants for different roles.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=70" alt="People collaborating" loading="lazy">
+          <div class="body">
+            <b>Task Assistance</b>
+            <p>Draft SOPs, proposals, briefs, and internal docs with consistent structure.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=70" alt="Business planning" loading="lazy">
+          <div class="body">
+            <b>Personalized Output</b>
+            <p>Adjust tone, templates, and outputs to match your brand and workflow.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1400&q=70" alt="Remote work" loading="lazy">
+          <div class="body">
+            <b>Always-on Availability</b>
+            <p>Support teams across time zones with quick responses and consistent output.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="btnrow">
+        <a class="btn primary" id="ctaFeatures" href="#" rel="nofollow noopener" target="_blank">View Features → (Provider Site)</a>
+        <a class="btn secondary" href="comparison.html">Compare Options</a>
+      </div>
+
+      <div class="footer">
+        <br>
+        Affiliate disclosure: This website contains affiliate links. If you click a link and sign up or purchase, we may earn a commission at no additional cost to you. We do not claim to represent any provider officially. Product names, logos, and trademarks are the property of their respective owners and are used only for identification and comparison. Always verify features, pricing, and terms on the provider’s website before making a decision.
+        <br><br>
+        <a href="privacy.html">Privacy</a> • <a href="terms.html">Terms</a>
+        <br><br>
+        This is an independent guide website. It is not the official provider website.
+      </div>
+    </div>
+  </div>
+
+  <div class="sticky">
+    <div class="inner">
+      <div class="txt">See current features & plans on the provider website.</div>
+      <a class="btn primary" id="ctaSticky" href="#" rel="nofollow noopener" target="_blank">Open Platform →</a>
+    </div>
+  </div>
+
+  <script>
+    const OUT_URL = "https://inpmz.ttrk.io/click";
+    const ctas = ["ctaNav","ctaMobile","ctaFeatures","ctaSticky"];
+    ctas.forEach(id=>{ const el=document.getElementById(id); if(el) el.href=OUT_URL; });
+
+    function trackOutbound(label){
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event:"outbound_click", outbound_label:label, outbound_url:OUT_URL });
+    }
+    ctas.forEach(id=>{
+      const el=document.getElementById(id);
+      if(!el) return;
+      el.addEventListener("click", ()=>trackOutbound(id));
+    });
+
+    const burger=document.getElementById("burger");
+    const mobileMenu=document.getElementById("mobileMenu");
+    burger.addEventListener("click", ()=>{
+      const isOpen=burger.getAttribute("aria-expanded")==="true";
+      burger.setAttribute("aria-expanded", String(!isOpen));
+      mobileMenu.hidden=isOpen;
+      mobileMenu.style.display=isOpen?"none":"block";
+    });
+    mobileMenu.addEventListener("click",(e)=>{
+      const a=e.target.closest("a"); if(!a) return;
+      burger.setAttribute("aria-expanded","false");
+      mobileMenu.hidden=true; mobileMenu.style.display="none";
+    });
+    mobileMenu.hidden=true; mobileMenu.style.display="none";
+  </script>
+</body>
+</html>

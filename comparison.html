@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Assistants — Quick Comparison (2026)</title>
+  <meta name="description" content="Independent comparison checklist: AI assistant platforms vs manual tools." />
+
+  <style>
+    :root{
+      --bg:#fbfbfd;
+      --text:#0b1220;
+      --muted:#4b5563;
+      --line:rgba(15,23,42,.12);
+
+      --c1:#5b6cff;
+      --c2:#8b5cf6;
+
+      --green:#22c55e;
+      --yellow:#ffb000;
+
+      --shadow: 0 16px 40px rgba(15,23,42,.10);
+      --radius:26px;
+      --max:1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background:
+        radial-gradient(900px 600px at 18% 10%, rgba(91,108,255,.10), transparent 60%),
+        radial-gradient(900px 600px at 85% 25%, rgba(139,92,246,.10), transparent 60%),
+        radial-gradient(900px 600px at 55% 0%, rgba(120,80,255,.06), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:18px 18px 90px}
+    .spacer{height:6px}
+
+    /* NAV (same as features) */
+    .nav{position:sticky; top:0; z-index:60; background:rgba(255,255,255,.82); backdrop-filter: blur(10px); border-bottom:1px solid rgba(15,23,42,.10);}
+    .navInner{max-width:var(--max); margin:0 auto; padding:10px 18px; display:flex; align-items:center; justify-content:space-between; gap:12px;}
+    .navLeft{display:flex; align-items:center; gap:12px; min-width:210px;}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:1000}
+    .logoMark{width:34px;height:34px;border-radius:12px;background:linear-gradient(135deg,var(--c1),var(--c2));box-shadow:0 0 0 6px rgba(91,108,255,.10);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:1000;font-size:14px;border:1px solid rgba(255,255,255,.22);}
+    .navLinks{display:flex; align-items:center; gap:8px; flex-wrap:wrap; justify-content:center;}
+    .nav a.link{font-size:13px;font-weight:900;color:#111827;padding:10px 10px;border-radius:12px;border:1px solid transparent;transition:.15s ease;line-height:1;white-space:nowrap;}
+    .nav a.link:hover{background:rgba(91,108,255,.06);border-color: rgba(91,108,255,.16);transform: translateY(-1px);}
+    .nav a.link.active{background:linear-gradient(135deg, rgba(91,108,255,.14), rgba(139,92,246,.10));border-color: rgba(91,108,255,.22);}
+    .navRight{display:flex; align-items:center; gap:10px; min-width:210px; justify-content:flex-end;}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 14px;border-radius:14px;font-weight:1000;border:1px solid rgba(15,23,42,.12);cursor:pointer;transition:.18s ease;background:#fff;white-space:nowrap;}
+    .btn.primary{background:linear-gradient(135deg,var(--c1),var(--c2));color:#fff;border:1px solid rgba(255,255,255,.12);box-shadow:0 18px 40px rgba(91,108,255,.18);}
+    .btn.secondary{background:rgba(255,255,255,.92); color:var(--text)}
+    .btn:hover{transform:translateY(-1px); filter:brightness(1.02)}
+    .burger{display:none;width:44px;height:44px;border-radius:14px;border:1px solid rgba(15,23,42,.12);background:rgba(255,255,255,.92);align-items:center;justify-content:center;cursor:pointer;transition:.18s ease;}
+    .burger svg{display:block}
+    .mobileMenu{display:none;border-top:1px solid rgba(15,23,42,.10);background:rgba(255,255,255,.92);}
+    .mobileMenu .mmInner{max-width:var(--max);margin:0 auto;padding:12px 18px 16px;display:grid;gap:10px;}
+    .mmGrid{display:grid;grid-template-columns:1fr;gap:8px;}
+    .mmGrid a{padding:12px 12px;border-radius:14px;border:1px solid rgba(15,23,42,.10);background:#fff;font-weight:950;color:#111827;}
+    .mmGrid a:hover{background:rgba(91,108,255,.06);border-color: rgba(91,108,255,.18);}
+    @media(max-width:900px){.navLinks{display:none}.burger{display:flex}.navRight{min-width:auto}.navLeft{min-width:auto}}
+
+    /* PAGE */
+    .panel{background:rgba(255,255,255,.92);border:1px solid rgba(15,23,42,.10);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;margin-top:10px;}
+    h1{font-size:34px;line-height:1.08;margin:0 0 10px;letter-spacing:-.7px;}
+    .hglow{background: linear-gradient(135deg, var(--c1), var(--c2));-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow: 0 18px 40px rgba(91,108,255,.12);}
+    .sub{color:var(--muted);font-size:16px;margin:0 0 16px;max-width:80ch;}
+
+    .tableWrap{overflow:auto;border-radius:18px;border:1px solid rgba(15,23,42,.10);background:rgba(255,255,255,.80);}
+    table{width:100%;border-collapse:collapse;min-width:860px}
+    th,td{padding:12px;text-align:left;border-top:1px solid rgba(15,23,42,.08)}
+    th{background:rgba(15,23,42,.03);border-top:none;font-weight:1000;color:#111827}
+    td{color:var(--muted);font-size:14px}
+    .yes{color:var(--green);font-weight:1000}
+    .mid{color:var(--yellow);font-weight:1000}
+
+    .imgRow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+    .imgBox{border-radius:18px;overflow:hidden;border:1px solid rgba(15,23,42,.10);background:#fff;box-shadow:0 14px 30px rgba(15,23,42,.08);}
+    .imgBox img{width:100%;height:220px;object-fit:cover;display:block}
+    @media(max-width:900px){.imgRow{grid-template-columns:1fr}.imgBox img{height:200px}}
+
+    .btnrow{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+    .footer{margin-top:16px;color:var(--muted);font-size:12px;opacity:.95;}
+    .footer a{text-decoration:underline}
+
+    .sticky{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.92);border-top:1px solid rgba(15,23,42,.12);padding:10px 12px;z-index:50;backdrop-filter: blur(10px);}
+    .sticky .inner{max-width:var(--max);margin:0 auto;display:flex;gap:10px;align-items:center;justify-content:space-between;}
+    .sticky .txt{font-size:13px;color:var(--muted)}
+    @media(max-width:700px){.sticky .txt{display:none}}
+  </style>
+
+  <script type="text/javascript" src="https://inpmz.ttrk.io/track.js?rtkcmpid=699559c857a3f63c0376a292"></script>
+</head>
+
+<body>
+  <header class="nav" aria-label="Site navigation">
+    <div class="navInner">
+      <div class="navLeft">
+        <a class="brand" href="index.html" aria-label="Home">
+          <div class="logoMark">AI</div>
+          <div>AI Assistants Guide</div>
+        </a>
+      </div>
+
+      <nav class="navLinks" aria-label="Primary">
+        <a class="link" href="index.html">Overview</a>
+        <a class="link" href="features.html">Top Features</a>
+        <a class="link active" href="comparison.html">Comparison</a>
+        <a class="link" href="faq.html">FAQ</a>
+      </nav>
+
+      <div class="navRight">
+        <a class="btn primary" id="ctaNav" href="#" rel="nofollow noopener" target="_blank">Open Platform →</a>
+        <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M4 7h16a1 1 0 1 0 0-2H4a1 1 0 1 0 0 2zm16 4H4a1 1 0 0 0 0 2h16a1 1 0 1 0 0-2zm0 6H4a1 1 0 1 0 0 2h16a1 1 0 1 0 0-2z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobileMenu" id="mobileMenu" hidden>
+      <div class="mmInner">
+        <div class="mmGrid">
+          <a href="index.html">Overview</a>
+          <a href="features.html">Top Features</a>
+          <a href="comparison.html">Comparison</a>
+          <a href="faq.html">FAQ</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+        </div>
+        <a class="btn primary" id="ctaMobile" href="#" rel="nofollow noopener" target="_blank" style="width:100%">Open Platform →</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="spacer"></div>
+
+    <div class="panel">
+      <h1><span class="hglow">Quick comparison</span> (buyer checklist)</h1>
+      <p class="sub">
+        Use this table to compare a modern AI assistant platform vs manual workflows and scattered tools.
+        Always confirm current plan details on the provider website.
+      </p>
+
+      <div class="tableWrap">
+        <table>
+          <thead>
+            <tr>
+              <th>What teams compare</th>
+              <th>AI assistant platform</th>
+              <th>Manual tools</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Speed to first output</td><td class="yes">Minutes</td><td class="mid">Hours</td></tr>
+            <tr><td>Repeatable workflows</td><td class="yes">Built-in</td><td class="mid">Manual templates</td></tr>
+            <tr><td>Content production</td><td class="yes">Fast</td><td class="mid">Slow</td></tr>
+            <tr><td>Consistency</td><td class="yes">High</td><td class="mid">Depends on person</td></tr>
+            <tr><td>Scales across teams</td><td class="yes">Yes</td><td class="mid">Hard</td></tr>
+            <tr><td>Time savings</td><td class="yes">High</td><td class="mid">Limited</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="imgRow">
+        <div class="imgBox">
+          <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1400&q=70" alt="Strategy planning" loading="lazy">
+        </div>
+        <div class="imgBox">
+          <img src="https://images.unsplash.com/photo-1551836022-4c4c79ecde51?auto=format&fit=crop&w=1400&q=70" alt="Working on laptop" loading="lazy">
+        </div>
+      </div>
+
+      <div class="btnrow">
+        <a class="btn primary" id="ctaCompare" href="#" rel="nofollow noopener" target="_blank">Check Plans → (Provider Site)</a>
+        <a class="btn secondary" href="faq.html">FAQ</a>
+      </div>
+
+      <div class="footer">
+        <br>
+       Affiliate disclosure: This website contains affiliate links. If you click a link and sign up or purchase, we may earn a commission at no additional cost to you. We do not claim to represent any provider officially. Product names, logos, and trademarks are the property of their respective owners and are used only for identification and comparison. Always verify features, pricing, and terms on the provider’s website before making a decision.
+        <br><br>
+        <a href="privacy.html">Privacy</a> • <a href="terms.html">Terms</a>
+        <br><br>
+        This is an independent guide website. It is not the official provider website.
+      </div>
+    </div>
+  </div>
+
+  <div class="sticky">
+    <div class="inner">
+      <div class="txt">Confirm plans and availability on the provider website.</div>
+      <a class="btn primary" id="ctaSticky" href="#" rel="nofollow noopener" target="_blank">Open Platform →</a>
+    </div>
+  </div>
+
+  <script>
+    const OUT_URL = "https://inpmz.ttrk.io/click";
+    const ctas = ["ctaNav","ctaMobile","ctaCompare","ctaSticky"];
+    ctas.forEach(id=>{ const el=document.getElementById(id); if(el) el.href=OUT_URL; });
+
+    function trackOutbound(label){
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event:"outbound_click", outbound_label:label, outbound_url:OUT_URL });
+    }
+    ctas.forEach(id=>{
+      const el=document.getElementById(id);
+      if(!el) return;
+      el.addEventListener("click", ()=>trackOutbound(id));
+    });
+
+    const burger=document.getElementById("burger");
+    const mobileMenu=document.getElementById("mobileMenu");
+    burger.addEventListener("click", ()=>{
+      const isOpen=burger.getAttribute("aria-expanded")==="true";
+      burger.setAttribute("aria-expanded", String(!isOpen));
+      mobileMenu.hidden=isOpen;
+      mobileMenu.style.display=isOpen?"none":"block";
+    });
+    mobileMenu.addEventListener("click",(e)=>{
+      const a=e.target.closest("a"); if(!a) return;
+      burger.setAttribute("aria-expanded","false");
+      mobileMenu.hidden=true; mobileMenu.style.display="none";
+    });
+    mobileMenu.hidden=true; mobileMenu.style.display="none";
+  </script>
+</body>
+</html>
